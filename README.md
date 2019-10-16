@@ -1,5 +1,5 @@
 # Pokedex
-![pokedex](./src/images/Pokedex_3D.png)
+![pokedex](./src/images/pokedex_3d.png)
 
 ## Description
 
