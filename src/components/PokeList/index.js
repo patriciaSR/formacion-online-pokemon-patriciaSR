@@ -6,14 +6,14 @@ import pikachuSad from './../../images/pika-sad.gif';
 
 const NoResults = () => (
   <>
-    <p className="no-results__text">No hay resultados para esa búsqueda</p>
+    <p className="no-results__text">No results for that search</p>
     <img className="no-results__img" src={pikachuSad} alt="sorry-pokemon"/>
   </>
 );
 
 const Loading = () => (
   <>
-    <p className="loading__text">Cargando pokemons ...</p>
+    <p className="loading__text">Loading pokemons ...</p>
   </>
 )
 
