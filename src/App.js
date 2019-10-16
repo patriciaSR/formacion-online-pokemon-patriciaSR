@@ -15,18 +15,13 @@ class App extends React.Component {
     getPokemons()
       .then(data => {
         const pokemonsArr = data.results.map((item) => {
-          let pokemon = {};
-          fetch('https://swapi.co/api/people/1/?format=json')
-            .then(response => response.json())
-            .then(data => {
-              pokemon = data;
-              return pokemon;
-            });
+          return fetch('https://swapi.co/api/people/1/?format=json')
+            .then(response => response.json());
         });
+
         return Promise.all(pokemonsArr);
       })
       .then(info => {
-        console.log(info);
         this.setState({
           pokemons: info
         });
@@ -38,11 +33,20 @@ class App extends React.Component {
   };
 
   render() {
-    return (
-      <div className="App">
-        :)
+    if (this.state.pokemons.length > 0) {
+      return (
+        <div className="App">
+          {this.state.pokemons[0].name}
       </div>
-    );
+      );
+    } else {
+      return (
+        <div className="App">
+          :)
+        </div>
+      );
+    }
+
   }
 }
 
