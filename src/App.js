@@ -11,8 +11,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       pokemons: [],
-      queryName: ''
+      queryName: '',
+      isFetching: true
     };
+
+    this.getQuery = this.getQuery.bind(this);
   };
 
   getPokemonsData() {
@@ -27,9 +30,18 @@ class App extends React.Component {
       })
       .then(info => {
         this.setState({
-          pokemons: info
+          pokemons: info,
+          isFetching: false
         });
       })
+  };
+
+  getQuery(e) {
+    const inputName = e.currentTarget.value;
+    console.log(inputName);
+    this.setState({
+      queryName: inputName
+    }) 
   };
 
   componentDidMount() {
@@ -37,12 +49,24 @@ class App extends React.Component {
   };
 
   render() {
+    const {
+      pokemons,
+      queryName,
+      isFetching
+    } = this.state;
+
     return (
       <>
         <Header />
         <main>
-          <Filters />
-          <PokeList pokemons={this.state.pokemons}/>
+          <Filters 
+            getQuery={this.getQuery}
+          />
+          <PokeList 
+            pokemons={pokemons}
+            queryName={queryName}
+            isFetching={isFetching}
+          />
           
         </main>
         <Footer />
