@@ -58,7 +58,7 @@ class App extends React.Component {
       <div className="app">
         <Header getQuery={this.getQuery} />
 
-        <main>
+        <main className="main">
 
           <PokeList
             pokemons={pokemons}

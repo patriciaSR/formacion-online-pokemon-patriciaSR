@@ -8,7 +8,7 @@ const Header = (props) => {
   } = props;
 
   return (
-    <header class="page__header">
+    <header className="page__header">
       <h1 className="page__title">Pokedex</h1>
       <Filters getQuery={getQuery} />
     </header>

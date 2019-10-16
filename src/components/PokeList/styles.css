@@ -1,7 +1,35 @@
-.pokemon__list{
+.pokemon__list {
   list-style: none;
   margin: 20px 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.loading__text {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+.loading__text::after {
+  content: "";
+  margin-top: 20px;
+  width: 300px;
+  height: 200px;
+  display: block;
+  align-self: center;
+  background-image: url(/static/media/pika-charg.48691692.gif);
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: center;
+}
+.no-results__text {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.no-results__img {
+  width: 300px;
 }

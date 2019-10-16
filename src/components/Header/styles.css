@@ -8,7 +8,7 @@
 }
 .page__title {
   height: 1px;
-  width: 400px;
+  width: 100%;
   overflow: hidden;
   padding-top: 100px;
   background-image: url('./../../images/Pokédex_3D.png');

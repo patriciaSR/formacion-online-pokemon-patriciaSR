@@ -1,0 +1,12 @@
+.page__footer {
+    height: 50px;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.github__link {
+    color: blue;
+    text-decoration: none;
+}
