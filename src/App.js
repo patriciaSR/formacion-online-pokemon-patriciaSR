@@ -4,6 +4,7 @@ import getPokemons from './services/getData';
 import Header from './components/Header/index';
 import Filters from './components/Filters/index';
 import Footer from './components/Footer/index';
+import PokeList from './components/PokeList/index';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,16 +42,8 @@ class App extends React.Component {
         <Header />
         <main>
           <Filters />
-          {(this.state.pokemons.length > 0) ? (
-            <div className="App">
-              {this.state.pokemons[0].name}
-            </div>
-          ) : (
-              <div className="App">
-                :D
-        </div>
-            )
-          }
+          <PokeList pokemons={this.state.pokemons}/>
+          
         </main>
         <Footer />
       </>
