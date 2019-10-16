@@ -18,7 +18,7 @@ class App extends React.Component {
     getPokemons()
       .then(data => {
         const pokemonsArr = data.results.map((item) => {
-          return fetch('https://swapi.co/api/people/1/?format=json')
+          return fetch(item.url)
             .then(response => response.json());
         });
 
