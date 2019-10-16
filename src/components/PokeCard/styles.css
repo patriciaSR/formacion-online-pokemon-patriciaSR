@@ -1,0 +1,37 @@
+.pokemon__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid red;
+  background-color: wheat;
+  padding: 20px;
+  width:150px;
+  position: relative;
+}
+.pokemon-img__container {
+  background-color: indianred;
+  width: 100%;
+  align-self: center;
+  order: -1;
+}
+.pokemon-type__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.pokemon__type {
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+.pokemon__id {
+  position: absolute;
+  left: 0;
+  top: 91px;
+  margin: 0 20px;
+  padding: 5px;
+  background-color: grey;
+
+}

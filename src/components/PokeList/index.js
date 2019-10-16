@@ -1,5 +1,6 @@
 import React from 'react';
 import PokeCard from './../PokeCard/index';
+import './styles.css';
 
 const PokeList = (props) => {
   const {

@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import getPokemons from './services/getData';
 import Header from './components/Header/index';
-import Filters from './components/Filters/index';
 import Footer from './components/Footer/index';
 import PokeList from './components/PokeList/index';
 
@@ -41,7 +40,7 @@ class App extends React.Component {
     console.log(inputName);
     this.setState({
       queryName: inputName
-    }) 
+    })
   };
 
   componentDidMount() {
@@ -56,23 +55,23 @@ class App extends React.Component {
     } = this.state;
 
     return (
-      <>
-        <Header />
+      <div className="app">
+        <Header getQuery={this.getQuery} />
+
         <main>
-          <Filters 
-            getQuery={this.getQuery}
-          />
-          <PokeList 
+
+          <PokeList
             pokemons={pokemons}
             queryName={queryName}
             isFetching={isFetching}
           />
-          
+
         </main>
+
         <Footer />
-      </>
+      </div>
     )
   };
 }
 
-  export default App;
+export default App;

@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 
 const PokeCard = (props) => {
   const {
@@ -13,7 +14,9 @@ const PokeCard = (props) => {
           <li className="pokemon__type" key={index}>{type.type.name}</li>
         ))}
       </ul>
-      <img className="pokemon__image" src={pokemon.sprites.front_default} alt={pokemon.name} />
+      <div className="pokemon-img__container">
+        <img className="pokemon__image" src={pokemon.sprites.front_default} alt={pokemon.name} />
+      </div>
     </li>
   )
 };
