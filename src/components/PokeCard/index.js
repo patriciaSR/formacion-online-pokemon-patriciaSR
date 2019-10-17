@@ -5,6 +5,7 @@ const PokeCard = (props) => {
   const {
     pokemon
   } = props;
+  
   return (
     <li className="pokemon__item" key={pokemon.id}>
       <p className="pokemon__id">{`id/${pokemon.id}`}</p>

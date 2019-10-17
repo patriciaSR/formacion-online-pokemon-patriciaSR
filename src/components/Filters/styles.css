@@ -1,6 +1,10 @@
+.filters {
+  background-color: brown; 
+}
 .filter-name__input {
   background-color: black;
   color: white;
   border: 1px solid blue;
   padding: 10px;
+  margin: 30px;
 }
