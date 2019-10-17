@@ -1,9 +1,11 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import getPokemons from './services/getData';
 import Header from './components/Header/index';
+import Home from './components/Home/index';
+import PokemonDetail from './components/PokemonDetail';
 import Footer from './components/Footer/index';
-import PokeList from './components/PokeList/index';
 
 class App extends React.Component {
   constructor(props) {
@@ -56,16 +58,28 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <Header getQuery={this.getQuery} />
-
+        <Header />
+    
         <main className="main">
-
-          <PokeList
-            pokemons={pokemons}
-            queryName={queryName}
-            isFetching={isFetching}
-          />
-
+          <Switch>
+            <Route exact path="/" render={() => (
+              <Home 
+                getQuery={this.getQuery}
+                pokemons={pokemons}
+                queryName={queryName}
+                isFetching={isFetching}
+              />
+            )}
+            />
+            <Route path="/pokemon/:id" render={(props) => (
+              <PokemonDetail
+                pokemons={pokemons}
+                isFetching={isFetching}
+                routeData={props}
+              />
+            )} 
+            />
+          </Switch>
         </main>
 
         <Footer />

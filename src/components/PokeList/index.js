@@ -1,21 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PokeCard from './../PokeCard/index';
+import Loading from './../Loading/index';
+import NoResults from './../NoResults/index';
 import './styles.css';
-import pikachuSad from './../../images/pika-sad.gif';
-
-
-const NoResults = () => (
-  <>
-    <p className="no-results__text">No results for that search</p>
-    <img className="no-results__img" src={pikachuSad} alt="sorry-pokemon"/>
-  </>
-);
-
-const Loading = () => (
-  <>
-    <p className="loading__text">Loading pokemons ...</p>
-  </>
-)
 
 const PokeList = (props) => {
   const {
@@ -30,6 +18,7 @@ const PokeList = (props) => {
     return <Loading />
 
   }
+  
   if (!filterPokemons.length) {
     return <NoResults />
   }
@@ -38,7 +27,9 @@ const PokeList = (props) => {
     <div className="pokemons__container">
       <ol className="pokemon__list">
         {filterPokemons.map(pokemon => (
-          <PokeCard pokemon={pokemon} key={pokemon.id} />
+          <Link to={`/pokemon/${pokemon.id}`} className="pokemon__card-link">
+            <PokeCard pokemon={pokemon} key={pokemon.id} />
+          </Link>
         )
         )}
       </ol>

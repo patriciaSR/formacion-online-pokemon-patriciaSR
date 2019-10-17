@@ -10,7 +10,7 @@ const Filters = (props) => {
   return (
     <div className="filters">
       <label htmlFor="filter-name" className="filter-name__label">
-        <input type="text" className="filter-name__input" onChange={getQuery} placeholder="Ej: charmander" />
+        <input type="text" className="filter-name__input" onChange={getQuery} placeholder="e.g. charmander" />
       </label>
     </div>
   )
@@ -18,6 +18,6 @@ const Filters = (props) => {
 
 Filters.propTypes = {
   getQuery: PropTypes.func.isRequired
-}
+};
 
 export default Filters;
